@@ -58,7 +58,7 @@ function Header() {
 				</div>
 				<div className="lg:w-1/2">
 					<Image
-						className="h-[70vh]  w-fit"
+						className="lg:h-[70vh]  w-fit"
 						src={header1}
 						alt="header-image"></Image>
 				</div>
@@ -82,7 +82,7 @@ function Header() {
 			</section>
 			<hr className="border-t border-gray-400/5 " />
 			<section className="container mx-auto p-4 lg:p-8 flex flex-col-reverse lg:grid lg:grid-cols-2 grid-cols-1">
-				<div className="flex flex-col justify-center w-2/3 mx-auto">
+				<div className="flex flex-col justify-center md:w-2/3 mx-auto">
 					<p className="sm:text-2xl font-bold flex-col flex  mb-6">
 						<span>Rules and </span>
 						<span className="text-[#D434FE]">Regulation</span>

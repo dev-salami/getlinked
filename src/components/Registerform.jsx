@@ -11,6 +11,21 @@ function Registerform() {
 	const [projectTopic, setprojectTopic] = useState("");
 	const [category, setcategory] = useState("");
 	const [teamSize, setteamSize] = useState("");
+	const [agree, setagree] = useState(false);
+
+	const data = {
+		email: email,
+		phone_number: phone,
+		team_name: teamName,
+		group_size: +teamSize,
+		project_topic: projectTopic,
+		category: category,
+		privacy_poclicy_accepted: agree,
+	};
+
+	const submitApplicationForm = () => {
+		console.log(data);
+	};
 
 	return (
 		<main className="container mx-auto p-2 lg:p-8 flex flex-col  items-center lg:flex-row gap-6">
@@ -32,6 +47,7 @@ function Registerform() {
 							className="text-sm p-2"
 							htmlFor="team-name">{`Team's Name`}</label>
 						<input
+							onChange={(e) => setteamName(e.target.value)}
 							id="team-name"
 							type="text"
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
@@ -45,6 +61,7 @@ function Registerform() {
 							Phone
 						</label>
 						<input
+							onChange={(e) => setphone(e.target.value)}
 							id="phone"
 							type="number"
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
@@ -58,6 +75,7 @@ function Registerform() {
 							Email
 						</label>
 						<input
+							onChange={(e) => setemail(e.target.value)}
 							id="email"
 							type="email"
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
@@ -71,6 +89,7 @@ function Registerform() {
 							project Topic
 						</label>
 						<input
+							onChange={(e) => setprojectTopic(e.target.value)}
 							id="projectTopic"
 							type="text"
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
@@ -81,18 +100,19 @@ function Registerform() {
 						<label
 							className="text-sm p-2"
 							htmlFor="category">
-							Category{" "}
+							Category
 						</label>
 						<select
+							onChange={(e) => setcategory(e.target.value)}
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							name="category"
 							id="category">
 							<option value="">Select your category</option>
 
-							<option value="value1">value1</option>
-							<option value="value2">value2</option>
-							<option value="value3">value3</option>
-							<option value="value4">value4</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
 						</select>
 					</div>
 					<div>
@@ -102,6 +122,7 @@ function Registerform() {
 							Group Size
 						</label>
 						<select
+							onChange={(e) => setteamSize(e.target.value)}
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							name="size"
 							id="size">
@@ -119,14 +140,17 @@ function Registerform() {
 						Please review your registration details before submitting
 					</p>
 					<div>
-						<input type="checkbox" />
+						<input
+							onChange={(e) => setagree(e.target.checked)}
+							type="checkbox"
+						/>
 						<span className="ml-2">
 							I agree with the event terms and conditions and privacy policy
 						</span>
 					</div>
 					<div className="flex justify-center md:justify-start">
 						<button
-							href="/register"
+							onClick={submitApplicationForm}
 							className="px-10 lg:px-4 py-2 mt-4  h-fit bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm">
 							Submit
 						</button>
