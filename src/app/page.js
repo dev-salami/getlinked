@@ -1,3 +1,4 @@
+import Faq from "@/components/Faq";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Successmodal from "@/components/Successmodal";
@@ -9,7 +10,7 @@ export default function Home() {
 		<>
 			<Navbar />
 			<Header />
-			{/* <Successmodal /> */}
+			<Faq />
 		</>
 	);
 }

@@ -2,15 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import chain from "../../public/assets/chain.svg";
-import header1 from "../../public/assets/header.svg";
-import idea from "../../public/assets/big-idea.svg";
-import rule from "../../public/assets/rule.svg";
-import judge from "../../public/assets/judge.svg";
+import header1 from "../../public/assets/header.png";
+import idea from "../../public/assets/idea.png";
+import rule from "../../public/assets/rule.png";
+import judge from "../../public/assets/judge.png";
+import sponsors from "../../public/assets/sponsors.svg";
+import CountdownTimer from "./Timer";
 
 function Header() {
 	return (
 		<>
-			<hr className="border-t border-[#D434FE]/20 " />
+			<hr className="border-t border-gray-400/5 " />
 			<section className="container mx-auto p-8 flex flex-col items-center lg:flex-row">
 				<div className="flex flex-col gap-4 sm:ml-8 sm:mt-8 lg:w-1/2">
 					<p className="font-bold text-4xl sm:text-6xl">
@@ -33,7 +35,12 @@ function Header() {
 						className=" w-fit px-4 py-[6px] bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm">
 						Register
 					</Link>
-					<div className="flex gap-5 mt-8">
+					<CountdownTimer
+						day={28}
+						m={"dec"}
+						year={"2023"}
+					/>
+					{/* <div className="flex gap-5 mt-8">
 						<div className="text-3xl font-semibold ">
 							<span>00</span>
 							<span className="text-sm ml-1">H</span>
@@ -47,7 +54,7 @@ function Header() {
 							<span>00</span>
 							<span className="text-sm ml-1">S</span>
 						</div>
-					</div>
+					</div> */}
 				</div>
 				<div className="lg:w-1/2">
 					<Image
@@ -56,32 +63,32 @@ function Header() {
 						alt="header-image"></Image>
 				</div>
 			</section>
-			<hr className="border-t border-[#D434FE]/20 " />
-			<section className="container mx-auto p-8 grid lg:grid-cols-2 grid-cols-1">
-				<div>
+			<hr className="border-t border-gray-400/5 " />
+			<section className="container mx-auto p-8 flex flex-col items-center lg:flex-row gap-6">
+				<div className="lg:w-1/2">
 					<Image
 						className="  w-fit"
 						src={idea}
 						alt="big-idea"></Image>
 				</div>
-				<div>
-					<p className="text-xl font-semibold">
+				<div className="lg:w-1/2">
+					<p className="text-xl font-semibold items-center lg:items-start flex flex-col gap-2 mb-6">
 						<span>Introduction to getlinked</span>
 						<span className="text-[#D434FE]">tech Hackathon 1.0</span>
 					</p>
 
-					<p>{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
+					<p className="leading-6 sm:leading-8">{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
 				</div>
 			</section>
-			<hr className="border-t border-[#D434FE]/20 " />
+			<hr className="border-t border-gray-400/5 " />
 			<section className="container mx-auto p-4 lg:p-8 flex flex-col-reverse lg:grid lg:grid-cols-2 grid-cols-1">
-				<div className="flex flex-col justify-center">
-					<p className="text-xl font-semibold flex-col flex gap-3 mb-3">
+				<div className="flex flex-col justify-center w-2/3 mx-auto">
+					<p className="sm:text-2xl font-bold flex-col flex  mb-6">
 						<span>Rules and </span>
 						<span className="text-[#D434FE]">Regulation</span>
 					</p>
 
-					<p className=" text-lg lg:text-xl">{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
+					<p className="leading-6 sm:leading-8">{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
 				</div>
 				<div>
 					<Image
@@ -90,7 +97,7 @@ function Header() {
 						alt="big-idea"></Image>
 				</div>
 			</section>
-			<hr className="border-t border-[#D434FE]/20 " />
+			<hr className="border-t border-gray-400/5 " />
 			<section className=" container mx-auto p-8 grid lg:grid-cols-2 grid-cols-1">
 				<div>
 					<Image

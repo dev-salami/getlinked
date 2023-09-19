@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 body {
 	background-color: #150e28;
+
 	color: white;
+	font-family: "Montserrat", sans-serif;
+}
+.flare {
+	background-image: url("../../public//assets/flare.svg");
+	background-size: 2000px;
+	background-repeat: repeat;
 }
 
 .btn {
