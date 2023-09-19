@@ -1,20 +1,36 @@
+import Image from "next/image";
 import React from "react";
+import congratulation from "../../public/assets/congratulation.png";
+import Link from "next/link";
 
 function Successmodal() {
 	return (
-		<div>
-			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, iure a
-			nesciunt ea, corrupti pariatur incidunt accusamus doloremque quasi eveniet
-			dolore beatae consequuntur aliquid quas quos cum! Architecto suscipit id
-			amet excepturi fugiat nihil delectus modi. Perspiciatis itaque modi, nulla
-			ipsum quo totam! Ipsum doloribus, fuga veniam, ex at voluptas aliquid
-			maiores, accusamus perferendis nulla delectus libero id itaque sed nostrum
-			minus expedita repellat iure unde soluta magnam ab dignissimos. Qui
-			voluptate fuga esse dignissimos exercitationem cumque natus rerum? Quidem
-			nam temporibus alias impedit et veniam maiores natus quos corporis
-			accusantium. Voluptatum voluptatem impedit laudantium esse saepe odit.
-			Sapiente, porro.
-		</div>
+		<section className="fixed inset-0 bg-[#150e28]/90 p-4  backdrop-blur-sm">
+			<div className="h-full flex justify-center items-center">
+				<div className="max-w-md border  border-[#D434FE]   rounded-md mx-auto flex flex-col  items-center">
+					<div>
+						<Image
+							className="  w-fit"
+							src={congratulation}
+							alt="big-idea"></Image>
+					</div>
+					<div className="text-center flex flex-col gap-4">
+						<p>
+							Congratulations <br />
+							You have successfully Registered
+						</p>
+						<p>
+							Yes, it was easy and you did it! check your mail box for next step
+						</p>
+						<Link
+							href="/"
+							className=" px-4 py-[6px] bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm w-full">
+							Back
+						</Link>
+					</div>
+				</div>
+			</div>
+		</section>
 	);
 }
 
