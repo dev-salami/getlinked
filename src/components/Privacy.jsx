@@ -30,7 +30,7 @@ function Privacy() {
 							participating in our event, you consent to the practices described
 							in this policy.
 						</p>
-						<div mt-6>
+						<div>
 							<span className="text-[#D434FE] font-semibold block mt-6 mb-2">
 								Licensing Policy
 							</span>

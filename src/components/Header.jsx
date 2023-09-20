@@ -6,19 +6,44 @@ import header1 from "../../public/assets/header.png";
 import idea from "../../public/assets/idea.png";
 import rule from "../../public/assets/rule.png";
 import judge from "../../public/assets/judge.png";
-import sponsors from "../../public/assets/sponsors.svg";
+import stroke from "../../public/assets/stroke.png";
+import bulb from "../../public/assets/bulb.png";
+
 import CountdownTimer from "./Timer";
 
 function Header() {
 	return (
 		<>
 			<hr className="border-t border-gray-400/5 " />
+			<section className="flex justify-around mt-8 container mx-auto px-4 ">
+				<div className="lg:block hidden w-96 h-2"></div>
+				<div className="sm:text-xl font-semibold text-center flex justify-center gap-2">
+					<span>Igniting a Revolution in</span>
+					<div className="flex flex-col items-center">
+						<span>HR Innovation </span>
+						<Image
+							className="w-32"
+							src={stroke}
+							alt="stroke"></Image>
+						{/* <span className="border-[#fe34b9]   border-t-2 h-10 w-auto rounded-full"></span> */}
+					</div>
+				</div>
+			</section>
 			<section
 				id="overview"
-				className="container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
-				<div className="flex flex-col gap-4 sm:ml-8 sm:mt-8 lg:w-1/2">
-					<p className="font-bold text-4xl sm:text-6xl">
-						<span>getlinked Tech</span>
+				className=" mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
+				<div className="flex flex-col gap-4 sm:ml-8  lg:w-1/2">
+					<p className="font-bold text-4xl sm:text-5xl xl:text-6xl">
+						<span className="pt-8 flex items-center ">
+							getlinked Te
+							<span className="flex -mt-6 flex-col-reverse  items-center">
+								<span>ch</span>
+								<Image
+									className="w-7 -mb-4"
+									src={bulb}
+									alt="bulb-icon"></Image>
+							</span>
+						</span>
 						<span className="font-bold  flex gap-2 mt-4">
 							Hackathon <span className="text-[#fe34b9]">1.0</span>
 							<Image
@@ -43,7 +68,7 @@ function Header() {
 						year={"2023"}
 					/>
 				</div>
-				<div className="lg:w-1/2 mt-6  w-full  flex justify-center">
+				<div className="lg:w-1/2   w-full  flex justify-center">
 					<Image
 						className="lg:h-[70vh]  h-96  sm:w-fit"
 						src={header1}

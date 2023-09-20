@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Partners from "@/components/Partners";
 import Privacy from "@/components/Privacy";
 import Prizes from "@/components/Prizes";
-import Successmodal from "@/components/Successmodal";
+import Footer from "@/components/Footer";
 import Timeline from "@/components/Timeline";
 
 import Image from "next/image";
@@ -19,6 +19,7 @@ export default function Home() {
 			<Prizes />
 			<Partners />
 			<Privacy />
+			<Footer/>
 		</>
 	);
 }
