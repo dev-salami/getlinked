@@ -63,11 +63,11 @@ function Privacy() {
 				</div>
 				<div className="lg:w-1/2  flex justify-center mx-auto relative">
 					<Image
-						className="relative w-2/3"
+						className="relative  h-fit"
 						src={secure}
 						alt="secure"></Image>
 					<Image
-						className="absolute w-2/3 top-1/4 right-1/5"
+						className="absolute  top-1/4 right-1/5"
 						src={lock}
 						alt="secure"></Image>
 				</div>

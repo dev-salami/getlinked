@@ -4,7 +4,9 @@ import Image from "next/image";
 
 function Faq() {
 	return (
-		<section className="container mx-auto p-8 mb-8 flex flex-col items-center md:flex-row gap-6">
+		<section
+			id="faq"
+			className="container mx-auto p-8 mb-8 flex flex-col items-center md:flex-row gap-6">
 			<div className="md:w-1/2">
 				<p className="text-2xl font-bold mb-4 text-center sm:text-left">
 					<span>Frequently Ask</span> <br />

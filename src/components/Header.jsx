@@ -13,7 +13,9 @@ function Header() {
 	return (
 		<>
 			<hr className="border-t border-gray-400/5 " />
-			<section className="container mx-auto p-8 flex flex-col items-center lg:flex-row">
+			<section
+				id="overview"
+				className="container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
 				<div className="flex flex-col gap-4 sm:ml-8 sm:mt-8 lg:w-1/2">
 					<p className="font-bold text-4xl sm:text-6xl">
 						<span>getlinked Tech</span>
@@ -26,13 +28,13 @@ function Header() {
 						</span>
 					</p>
 
-					<p className="text-sm leading-loose">
+					<p className="text-sm leading-loose sm:text-center lg:text-left">
 						Participate in getlinked tech Hackathon 2023 stand <br /> a chance
 						to win a Big prize
 					</p>
 					<Link
 						href="/register"
-						className=" w-fit px-4 py-[6px] bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm">
+						className=" sm:mx-auto lg:mx-0 w-fit px-4 py-[6px] bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm">
 						Register
 					</Link>
 					<CountdownTimer
@@ -40,25 +42,10 @@ function Header() {
 						m={"dec"}
 						year={"2023"}
 					/>
-					{/* <div className="flex gap-5 mt-8">
-						<div className="text-3xl font-semibold ">
-							<span>00</span>
-							<span className="text-sm ml-1">H</span>
-						</div>
-
-						<div className="text-3xl font-semibold ">
-							<span>00</span>
-							<span className="text-sm ml-1">M</span>
-						</div>
-						<div className="text-3xl font-semibold ">
-							<span>00</span>
-							<span className="text-sm ml-1">S</span>
-						</div>
-					</div> */}
 				</div>
-				<div className="lg:w-1/2">
+				<div className="lg:w-1/2 mt-6  w-full  flex justify-center">
 					<Image
-						className="lg:h-[70vh]  w-fit"
+						className="lg:h-[70vh]  h-96  sm:w-fit"
 						src={header1}
 						alt="header-image"></Image>
 				</div>
@@ -81,8 +68,8 @@ function Header() {
 				</div>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className="container mx-auto p-4 lg:p-8 flex flex-col-reverse lg:grid lg:grid-cols-2 grid-cols-1">
-				<div className="flex flex-col justify-center md:w-2/3 mx-auto">
+			<section className="container mx-auto p-5 sm:p-8 flex flex-col-reverse items-center lg:flex-row">
+				<div className="flex flex-col justify-center lg:w-2/3 mx-auto">
 					<p className="sm:text-2xl font-bold flex-col flex  mb-6">
 						<span>Rules and </span>
 						<span className="text-[#D434FE]">Regulation</span>
@@ -92,20 +79,20 @@ function Header() {
 				</div>
 				<div>
 					<Image
-						className="  w-fit"
+						className="   sm:w-fit"
 						src={rule}
-						alt="big-idea"></Image>
+						alt="rule-image"></Image>
 				</div>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className=" container mx-auto p-8 grid lg:grid-cols-2 grid-cols-1">
+			<section className=" container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
 				<div>
 					<Image
-						className="  w-fit"
+						className=" lg:h-[70vh]  h-96  sm:w-fit"
 						src={judge}
 						alt="judges-image"></Image>
 				</div>
-				<div className="flex flex-col justify-center">
+				<div className="flex flex-col justify-center lg:w-1/2">
 					<p className="text-xl font-semibold flex-col flex gap-3 mb-3">
 						<span>Judging Criteria</span>
 						<span className="text-[#D434FE]">Key attributes</span>

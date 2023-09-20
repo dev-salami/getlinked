@@ -45,7 +45,7 @@ function CountdownTimer({ m, year, day }) {
 	return (
 		<div className="">
 			<div className="text-xs font-semibold">
-				<div className="flex ">
+				<div className="flex sm:justify-center lg:justify-start ">
 					{expiryTime !== false ? (
 						<div className="flex gap-5 mt-8">
 							<div className=" text-3xl font-semibold ">

@@ -19,9 +19,9 @@ function Navbar() {
 					<span className="text-[#D434FE]">Linked</span>
 				</Link>
 				<div className="sm:flex gap-3 text-xs items-center hidden">
-					<Link href="/#timeline">Timeline</Link>
 					<Link href="/#overview">Overview</Link>
 					<Link href="/#faq">FAQs</Link>
+					<Link href="/#timeline">Timeline</Link>
 					<Link
 						className="bg-clip-text text-transparent bg-gradient-to-r from-[#fe34b9] to-[#903aff]"
 						href="/contact">

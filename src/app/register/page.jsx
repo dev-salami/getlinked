@@ -8,7 +8,7 @@ function Register() {
 		<section>
 			<Navbar />
 			<Registerform />
-			<Successmodal />
+			{/* <Successmodal /> */}
 		</section>
 	);
 }
