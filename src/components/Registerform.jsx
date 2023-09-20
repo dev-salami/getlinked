@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import register from "../../public/assets/register.png";
 import Image from "next/image";
+import hasEmptyOrZeroValues, { isValidEmail } from "@/helper/utils";
 // import { getCategoryList } from "@/helper/utils";
 
 function Registerform() {
@@ -45,7 +46,11 @@ function Registerform() {
 	};
 
 	const submitApplicationForm = () => {
-		console.log(Data);
+		const formIsEmpty = hasEmptyOrZeroValues(Data);
+		const emailIsValid = isValidEmail(Data.email);
+		if (!formIsEmpty && emailIsValid) {
+			console.log(Data);
+		}
 	};
 
 	return (
@@ -105,7 +110,9 @@ function Registerform() {
 							id="email"
 							type="email"
 							value={email}
-							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
+							className={`${
+								!isValidEmail(Data.email) && email && "focus:border-red-600"
+							} bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none`}
 							placeholder="Enter your email"
 						/>
 					</div>
@@ -167,7 +174,7 @@ function Registerform() {
 							<option
 								className="bg-[#150e28]"
 								value="">
-								Group Size
+								Select Group Size
 							</option>
 
 							<option
