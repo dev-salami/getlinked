@@ -1,10 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import register from "../../public/assets/register.png";
 import Image from "next/image";
-import Link from "next/link";
+// import { getCategoryList } from "@/helper/utils";
 
 function Registerform() {
+	const baseUrl = "https://backend.getlinked.ai";
+	const url = `${baseUrl}/hackathon/categories-list`;
+
 	const [teamName, setteamName] = useState("");
 	const [phone, setphone] = useState("");
 	const [email, setemail] = useState("");
@@ -12,8 +16,25 @@ function Registerform() {
 	const [category, setcategory] = useState("");
 	const [teamSize, setteamSize] = useState("");
 	const [agree, setagree] = useState(false);
+	const [categoryTypes, setcategoryTypes] = useState([]);
+	const getCategoryList = () => {
+		axios
+			.get(url)
+			.then((response) => {
+				console.log(response.data);
+				setcategoryTypes(response.data);
+				// return response.data;
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
-	const data = {
+	useEffect(() => {
+		getCategoryList();
+	}, []);
+
+	const Data = {
 		email: email,
 		phone_number: phone,
 		team_name: teamName,
@@ -24,7 +45,7 @@ function Registerform() {
 	};
 
 	const submitApplicationForm = () => {
-		console.log(data);
+		console.log(Data);
 	};
 
 	return (
@@ -47,7 +68,9 @@ function Registerform() {
 							className="text-sm p-2"
 							htmlFor="team-name">{`Team's Name`}</label>
 						<input
+							autoComplete="off"
 							onChange={(e) => setteamName(e.target.value)}
+							value={teamName}
 							id="team-name"
 							type="text"
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
@@ -61,9 +84,11 @@ function Registerform() {
 							Phone
 						</label>
 						<input
+							autoComplete="off"
 							onChange={(e) => setphone(e.target.value)}
 							id="phone"
 							type="number"
+							value={phone}
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							placeholder="Enter your phone number"
 						/>
@@ -75,9 +100,11 @@ function Registerform() {
 							Email
 						</label>
 						<input
+							autoComplete="off"
 							onChange={(e) => setemail(e.target.value)}
 							id="email"
 							type="email"
+							value={email}
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							placeholder="Enter your email"
 						/>
@@ -89,8 +116,10 @@ function Registerform() {
 							project Topic
 						</label>
 						<input
+							autoComplete="off"
 							onChange={(e) => setprojectTopic(e.target.value)}
 							id="projectTopic"
+							value={projectTopic}
 							type="text"
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							placeholder="What is your group project topic"
@@ -104,15 +133,23 @@ function Registerform() {
 						</label>
 						<select
 							onChange={(e) => setcategory(e.target.value)}
-							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
+							value={category}
+							className=" bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							name="category"
 							id="category">
-							<option value="">Select your category</option>
-
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
+							<option
+								className="bg-[#150e28]"
+								value="">
+								Select your category
+							</option>
+							{categoryTypes.map((category) => (
+								<option
+									key={category.id}
+									className="bg-[#150e28]"
+									value={category.name}>
+									{category.name}
+								</option>
+							))}
 						</select>
 					</div>
 					<div>
@@ -123,15 +160,36 @@ function Registerform() {
 						</label>
 						<select
 							onChange={(e) => setteamSize(e.target.value)}
+							value={teamSize}
 							className="bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none "
 							name="size"
 							id="size">
-							<option value="">Group Size</option>
+							<option
+								className="bg-[#150e28]"
+								value="">
+								Group Size
+							</option>
 
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
+							<option
+								className="bg-[#150e28]"
+								value="1">
+								1
+							</option>
+							<option
+								className="bg-[#150e28]"
+								value="2">
+								2
+							</option>
+							<option
+								className="bg-[#150e28]"
+								value="3">
+								3
+							</option>
+							<option
+								className="bg-[#150e28]"
+								value="4">
+								4
+							</option>
 						</select>
 					</div>
 				</form>
@@ -141,7 +199,10 @@ function Registerform() {
 					</p>
 					<div>
 						<input
+							id="group-size"
+							autoComplete="off"
 							onChange={(e) => setagree(e.target.checked)}
+							value={agree}
 							type="checkbox"
 						/>
 						<span className="ml-2">
@@ -150,8 +211,9 @@ function Registerform() {
 					</div>
 					<div className="flex justify-center md:justify-start">
 						<button
+							disabled={!agree}
 							onClick={submitApplicationForm}
-							className="px-10 lg:px-4 py-2 mt-4  h-fit bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm">
+							className="px-10 lg:px-4 py-2 mt-4 disabled:opacity-70  h-fit bg-gradient-to-r from-[#fe34b9] to-[#903aff] rounded-sm">
 							Submit
 						</button>
 					</div>
