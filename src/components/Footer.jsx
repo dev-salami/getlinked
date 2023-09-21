@@ -33,10 +33,11 @@ function Footer() {
 				<div className="md:w-1/4 flex justify-center flex-col items-center">
 					<div className="flex flex-col items-center gap-4 text-sm">
 						<p className="text-[#D434FE] font-semibold text-xl">Useful Links</p>
-						<Link href="/#">Overview</Link>
-						<Link href="/#timeline">Timeline</Link>
-						<Link href="/#faq">FAQS</Link>
-						<Link href="register">register</Link>
+						<a href="/#">Overview</a>
+						<a href="/#timeline">Timeline</a>
+						<a href="/#faq">FAQS</a>
+						<Link href="contact">Contact</Link>
+						<Link href="register">Register</Link>
 					</div>
 					<div className="mt-6 flex flex-col items-center">
 						<span className="text-[#D434FE] font-semibold mb-2">
@@ -83,7 +84,7 @@ function Footer() {
 					</div>
 					<div className="flex gap-4">
 						<BiPhoneCall size={30} />
-						<p>Call Us : 07067981819</p>
+						<p> 07067981819</p>
 					</div>
 				</div>
 			</div>
