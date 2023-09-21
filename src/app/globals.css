@@ -14,6 +14,11 @@ body {
 	color: white;
 	font-family: "Montserrat", sans-serif;
 }
+@media only screen and (max-width: 375px) {
+	html {
+		font-size: 80%;
+	}
+}
 .flare {
 	background-image: url("../../public//assets/flare.svg");
 	background-size: 2000px;

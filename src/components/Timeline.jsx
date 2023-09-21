@@ -1,10 +1,69 @@
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
+import star from "../../public/assets/star.svg";
+import starp from "../../public/assets/starp.svg";
 
 function Timeline() {
 	return (
 		<section
 			id="timeline"
-			className="container mx-auto px-6 mb-20 flex flex-col gap-10">
+			className="relative overflow-hidden container mx-auto px-6 mb-20 flex flex-col gap-10">
+			<span className="absolute overflow-hidden w-fit -z-10 bottom-0 right-[10%]  md:right-1/4  lg:left-0  -translate-x-1/2">
+				<motion.div
+					initial={{ opacity: 0.5, scale: 0.8 }}
+					animate={{
+						opacity: 1,
+						scale: 1,
+						filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+					}}
+					transition={{
+						duration: 1,
+						repeat: Infinity,
+						repeatType: "reverse",
+					}}>
+					<Image
+						src={starp}
+						alt="star-icon"></Image>
+				</motion.div>
+			</span>
+			<span className="absolute overflow-hidden w-fit -z-10 top-0 right-[10%]  md:right-1/4  lg:right-0  -translate-x-1/2">
+				<motion.div
+					initial={{ opacity: 0.5, scale: 0.8 }}
+					animate={{
+						opacity: 1,
+						scale: 1,
+						filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+					}}
+					transition={{
+						duration: 1,
+						repeat: Infinity,
+						repeatType: "reverse",
+					}}>
+					<Image
+						src={starp}
+						alt="star-icon"></Image>
+				</motion.div>
+			</span>
+			<span className="absolute overflow-hidden w-fit -z-10 bottom-1/2 right-[10%] lg:left-[10%]  -translate-x-1/2">
+				<motion.div
+					initial={{ opacity: 0.5, scale: 0.8 }}
+					animate={{
+						opacity: 1,
+						scale: 1,
+						filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+					}}
+					transition={{
+						duration: 1,
+						repeat: Infinity,
+						repeatType: "reverse",
+					}}>
+					<Image
+						src={star}
+						alt="star-icon"></Image>
+				</motion.div>
+			</span>
 			<div className="flex  flex-row-reverse md:flex-row justify-center gap-6">
 				<div className="md:w-1/2 max-w-md ml-auto flex-col flex justify-end gap-3">
 					<h2 className="font-semibold text-xl text-[#D434FE] ">

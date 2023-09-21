@@ -61,9 +61,9 @@ function Privacy() {
 						</div>
 					</div>
 				</div>
-				<div className="lg:w-1/2  flex justify-center mx-auto relative">
+				<div className="lg:w-1/2  flex justify-center mx-auto relative overflow-hidden">
 					<Image
-						className="relative  h-fit"
+						className="relative overflow-hidden  h-fit"
 						src={secure}
 						alt="secure"></Image>
 					<Image

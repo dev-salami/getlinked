@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import cup from "../../public/assets/cup.png";
 import reward from "../../public/assets/rewards.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import flare from "../../public/assets/flare.svg";
 
 function Prizes() {
 	return (
@@ -18,7 +21,26 @@ function Prizes() {
 					</p>
 				</div>
 			</div>
-			<div className=" flex  gap-10 mx-6 md:flex-row flex-col ">
+			<div className=" sm:flex hidden relative overflow-hidden    gap-10 mx-6 md:flex-row flex-col ">
+				<span className="absolute overflow-hidden -z-10 bottom-0 translate-y-1/2   left-0 rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]   ">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							className="rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]"
+							src={flare}
+							alt="starp-icon"></Image>
+					</motion.div>
+				</span>
 				<div>
 					<Image
 						className="  w-fit"

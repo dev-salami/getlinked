@@ -17,37 +17,37 @@ function Faq() {
 					getlinked Hackathon 1.0
 				</p>
 				<div className="flex flex-col gap-3 mt-6 text-sm">
-					<p className="flex justify-between ">
+					<p className="flex justify-between gap-6 ">
 						<span>
 							Can I work on a project I started before the hackathon ?
 						</span>
 						<button className="text-[#D434FE] text-xl font-bold">+</button>
 					</p>
 					<hr className="border-t border-[#D434FE]/80 " />
-					<p className="flex justify-between ">
+					<p className="flex justify-between gap-6 ">
 						<span>What happens if I need help during the hackathon ?</span>
 						<button className="text-[#D434FE] text-xl font-bold">+</button>
 					</p>
 					<hr className="border-t border-[#D434FE]/80 " />
-					<p className="flex justify-between ">
+					<p className="flex justify-between gap-6 ">
 						<span>{`What happens if I don't have an idea for a project ?
 +`}</span>
 						<button className="text-[#D434FE] text-xl font-bold">+</button>
 					</p>
 					<hr className="border-t border-[#D434FE]/80 " />
-					<p className="flex justify-between ">
+					<p className="flex justify-between gap-6 ">
 						<span>Can I join a team or do I have to come with one ?</span>
 						<button className="text-[#D434FE] text-xl font-bold">+</button>
 					</p>
 					<hr className="border-t border-[#D434FE]/80 " />
-					<p className="flex justify-between ">
+					<p className="flex justify-between gap-6 ">
 						<span>What happens after the hackathon ends ?</span>
 						<button className="text-[#D434FE] text-xl font-bold">+</button>
 					</p>
 					<hr className="border-t border-[#D434FE]/80 " />
-					<p className="flex justify-between ">
+					<p className="flex justify-between gap-6">
 						<span>
-							Can I work on a project I started before the hackathon ? +
+							Can I work on a project I started before the hackathon ?
 						</span>
 						<button className="text-[#D434FE] text-xl font-bold">+</button>
 					</p>
@@ -57,7 +57,7 @@ function Faq() {
 			</div>
 			<div className="md:w-1/2">
 				<Image
-					className="  w-fit"
+					className="  w-full"
 					src={faq}
 					alt="judges-image"></Image>
 			</div>

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,6 +9,11 @@ import rule from "../../public/assets/rule.png";
 import judge from "../../public/assets/judge.png";
 import stroke from "../../public/assets/stroke.png";
 import bulb from "../../public/assets/bulb.png";
+import star from "../../public/assets/star.svg";
+import starp from "../../public/assets/starp.svg";
+import flare from "../../public/assets/flare.svg";
+
+import { motion } from "framer-motion";
 
 import CountdownTimer from "./Timer";
 
@@ -76,10 +82,10 @@ function Header() {
 				</div>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className="container mx-auto p-8 flex flex-col items-center lg:flex-row gap-6">
-				<div className="lg:w-1/2">
+			<section className=" relative overflow-hidden container mx-auto p-8 flex flex-col items-center lg:flex-row gap-6">
+				<div className="lg:w-1/2 flex justify-center">
 					<Image
-						className="  w-fit"
+						className="  w-4/5"
 						src={idea}
 						alt="big-idea"></Image>
 				</div>
@@ -91,9 +97,83 @@ function Header() {
 
 					<p className="leading-6 sm:leading-8">{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
 				</div>
+				<span className="absolute overflow-hidden -z-10 top-0 lg:bottom-2/3  right-[10%]    ">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 1,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							src={starp}
+							alt="starp-icon"></Image>
+					</motion.div>
+				</span>
+				<span className="absolute overflow-hidden -z-10 bottom-0 lg:bottom-1/2  left-[5%]    ">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 1,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							src={starp}
+							alt="starp-icon"></Image>
+					</motion.div>
+				</span>
+				<span className="sm:block hidden absolute overflow-hidden -z-10 bottom-0 lg:bottom-1/2  -left-1/2 rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]   ">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							className="rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]"
+							src={flare}
+							alt="starp-icon"></Image>
+					</motion.div>
+				</span>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className="container mx-auto p-5 sm:p-8 flex flex-col-reverse items-center lg:flex-row">
+			<section className=" sm:block hidden relative overflow-hidden container mx-auto p-5 sm:p-8 flex flex-col-reverse items-center lg:flex-row">
+				<span className="absolute overflow-hidden -z-10 bottom-0   left-0 rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]   ">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							className="rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]"
+							src={flare}
+							alt="starp-icon"></Image>
+					</motion.div>
+				</span>
 				<div className="flex flex-col justify-center lg:w-2/3 mx-auto">
 					<p className="sm:text-2xl font-bold flex-col flex  mb-6">
 						<span>Rules and </span>
@@ -102,15 +182,34 @@ function Header() {
 
 					<p className="leading-6 sm:leading-8">{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
 				</div>
-				<div>
+				<div className="lg:w-1/2 flex justify-center">
 					<Image
-						className="   sm:w-fit"
+						className="   w-full"
 						src={rule}
 						alt="rule-image"></Image>
 				</div>
+
+				<span className="absolute overflow-hidden  w-fit -z-10 bottom-0  right-1/4  lg:left-1/2  -translate-x-1/2">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 3,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							src={star}
+							alt="starp-icon"></Image>
+					</motion.div>
+				</span>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className=" container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
+			<section className=" relative overflow-hidden container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
 				<div>
 					<Image
 						className=" lg:h-[70vh]  h-96  sm:w-fit"
@@ -171,6 +270,25 @@ function Header() {
 						</button>
 					</div>
 				</div>
+
+				<span className="absolute overflow-hidden w-fit -z-10 bottom-0 right-[10%]  md:right-1/4  lg:left-1/2  -translate-x-1/2">
+					<motion.div
+						initial={{ opacity: 0.5, scale: 0.8 }}
+						animate={{
+							opacity: 1,
+							scale: 1,
+							filter: "drop-shadow(0 0 5px rgba(0, 0, 255, 0.5))",
+						}}
+						transition={{
+							duration: 2,
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}>
+						<Image
+							src={star}
+							alt="star-icon"></Image>
+					</motion.div>
+				</span>
 			</section>
 		</>
 	);

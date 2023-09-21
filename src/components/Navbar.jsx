@@ -35,12 +35,28 @@ function Navbar() {
 				</div>
 				<button
 					onClick={() => setOpen((prev) => !prev)}
-					className="sm:hidden block duration-500 ">
-					{open ? (
+					className="sm:hidden block  ">
+					<div
+						className={`${
+							open ? "opacity-100 h-7 w-7" : "opacity-0 h-0 w-0"
+						} bg-gradient-to-r to-[#fe34b9] from-[#903aff]   duration-200   rounded-full  flex items-center justify-center ease-out`}>
+						<FaTimes
+							className="text-white bg-[#150e28] rounded-full p-[6px] font-bold "
+							size={25}
+						/>
+					</div>
+
+					{/* <FaBars size={30} /> */}
+					<Image
+						className={`${
+							open ? "opacity-0 h-0  w-0" : "opacity-100 h-5  w-fit"
+						}  duration-200 ease-out`}
+						src={bars}
+						alt="chain-icon"></Image>
+
+					{/* {open ? (
 						<div className=" bg-gradient-to-r to-[#fe34b9] from-[#903aff]   h-7 w-7 rounded-full  flex items-center justify-center">
-							{/* <div className="text-white h-7 w-7 rounded-full text-xl font-semibold bg-[#150e28]">
-								X
-							</div> */}
+							
 							<FaTimes
 								className="text-white bg-[#150e28] rounded-full p-[6px] font-bold "
 								size={25}
@@ -52,7 +68,7 @@ function Navbar() {
 							className="h-5  w-fit"
 							src={bars}
 							alt="chain-icon"></Image>
-					)}
+					)} */}
 				</button>
 			</div>
 		</section>
