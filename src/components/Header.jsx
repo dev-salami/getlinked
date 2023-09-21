@@ -82,10 +82,10 @@ function Header() {
 				</div>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className=" relative overflow-hidden container mx-auto p-8 flex flex-col items-center lg:flex-row gap-6">
+			<section className=" relative overflow-hidden container mx-auto p-3 md:p-8 flex flex-col items-center lg:flex-row gap-6">
 				<div className="lg:w-1/2 flex justify-center">
 					<Image
-						className="  w-4/5"
+						className="  md:w-4/5"
 						src={idea}
 						alt="big-idea"></Image>
 				</div>
@@ -97,7 +97,7 @@ function Header() {
 
 					<p className="leading-6 sm:leading-8">{`Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!`}</p>
 				</div>
-				<span className="absolute overflow-hidden -z-10 top-0 lg:bottom-2/3  right-[10%]    ">
+				<span className="absolute overflow-hidden -z-10 top-0 lg:bottom-2/3  right-[20%]    ">
 					<motion.div
 						initial={{ opacity: 0.5, scale: 0.8 }}
 						animate={{
@@ -115,7 +115,7 @@ function Header() {
 							alt="starp-icon"></Image>
 					</motion.div>
 				</span>
-				<span className="absolute overflow-hidden -z-10 bottom-0 lg:bottom-1/2  left-[5%]    ">
+				<span className="absolute overflow-hidden -z-10 bottom-0 lg:bottom-1/2  left-[15%]    ">
 					<motion.div
 						initial={{ opacity: 0.5, scale: 0.8 }}
 						animate={{
@@ -133,7 +133,7 @@ function Header() {
 							alt="starp-icon"></Image>
 					</motion.div>
 				</span>
-				<span className="sm:block hidden absolute overflow-hidden -z-10 bottom-0 lg:bottom-1/2  -left-1/2 rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]   ">
+				<span className="sm:block hidden absolute overflow-hidden -z-10 bottom-0 lg:bottom-1/2  -left-1/2 rounded-full w-[300px] md:w-[450px] h-[300px] md:h-[450px]   ">
 					<motion.div
 						initial={{ opacity: 0.5, scale: 0.8 }}
 						animate={{
@@ -147,15 +147,15 @@ function Header() {
 							repeatType: "reverse",
 						}}>
 						<Image
-							className="rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]"
+							className="rounded-full w-[300px] md:w-[450px] h-[300px] md:h-[450px]"
 							src={flare}
 							alt="starp-icon"></Image>
 					</motion.div>
 				</span>
 			</section>
 			<hr className="border-t border-gray-400/5 " />
-			<section className=" sm:block hidden relative overflow-hidden container mx-auto p-5 sm:p-8 flex flex-col-reverse items-center lg:flex-row">
-				<span className="absolute overflow-hidden -z-10 bottom-0   left-0 rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]   ">
+			<section className=" sm:flex hidden relative overflow-hidden container mx-auto p-5 sm:p-8  flex-col-reverse items-center lg:flex-row">
+				<span className="absolute overflow-hidden -z-10 bottom-0   left-0 rounded-full w-[300px] md:w-[450px] h-[300px] md:h-[450px]   ">
 					<motion.div
 						initial={{ opacity: 0.5, scale: 0.8 }}
 						animate={{
@@ -169,7 +169,7 @@ function Header() {
 							repeatType: "reverse",
 						}}>
 						<Image
-							className="rounded-full w-[600px] md:w-[900px] h-[600px] md:h-[900px]"
+							className="rounded-full w-[300px] md:w-[450px] h-[300px] md:h-[450px]"
 							src={flare}
 							alt="starp-icon"></Image>
 					</motion.div>

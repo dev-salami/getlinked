@@ -6,11 +6,17 @@ import ig from "../../../public/assets/ig.svg";
 import facebook from "../../../public/assets/facebook.svg";
 import linkedin from "../../../public/assets/linkedin.svg";
 import Image from "next/image";
+import axios from "axios";
+import hasEmptyOrZeroValues, { isValidEmail } from "@/helper/utils";
 
 function Contact() {
+	const baseUrl = "https://backend.getlinked.ai";
+	const url = `${baseUrl}/hackathon/contact-form`;
 	const [name, setName] = useState("");
 	const [email, setemail] = useState("");
 	const [phone, setphone] = useState("");
+	const [error, seterror] = useState("");
+	const [success, setsuccess] = useState("");
 
 	const [message, setmessage] = useState("");
 
@@ -22,9 +28,28 @@ function Contact() {
 	};
 
 	const submitMessage = () => {
-		console.log(data);
-	};
+		const formIsEmpty = hasEmptyOrZeroValues(data);
+		const emailIsValid = isValidEmail(data.email);
+		if (!formIsEmpty && emailIsValid) {
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+				},
+			};
+			axios
+				.post(url, data, config)
+				.then((response) => {
+					setsuccess("Your form has successfully been submitted");
+					console.log(response.data);
+				})
+				.catch((error) => {
+					console.log(error);
+					seterror("An Error Occured");
+				});
 
+			// console.log(data);
+		}
+	};
 	return (
 		<section>
 			<Navbar />
@@ -89,7 +114,9 @@ function Contact() {
 						/>
 						<input
 							onChange={(e) => setemail(e.target.value)}
-							className="bg-transparent  focus:border-[#D434FE] border-2 rounded-md p-1 h-fit focus:outline-none "
+							className={`${
+								!isValidEmail(data.email) && email && "focus:border-red-600"
+							} bg-transparent placeholder:text-sm w-full  focus:border-[#D434FE] border rounded-md py-1 px-3 h-fit focus:outline-none`}
 							value={email}
 							autoComplete="off"
 							name="email"
@@ -110,6 +137,7 @@ function Contact() {
 							onChange={(e) => setmessage(e.target.value)}
 							className="bg-transparent  focus:border-[#D434FE] border-2 rounded-md p-1 h-fit focus:outline-none "
 							value={message}
+							autoComplete="off"
 							placeholder="Message"
 							name="message"
 							id=""
@@ -123,6 +151,16 @@ function Contact() {
 							Submit
 						</button>
 					</div>
+					{error && (
+						<p className="my-4 text-red-500 text-center font-semibold">
+							{error}
+						</p>
+					)}
+					{success && (
+						<p className="my-4 text-green-500 text-center font-semibold">
+							{success}
+						</p>
+					)}
 				</div>
 			</main>
 		</section>
