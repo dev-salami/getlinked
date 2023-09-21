@@ -4,11 +4,12 @@ import axios from "axios";
 import register from "../../public/assets/register.png";
 import Image from "next/image";
 import hasEmptyOrZeroValues, { isValidEmail } from "@/helper/utils";
-// import { getCategoryList } from "@/helper/utils";
+import Successmodal from "@/components/Successmodal";
 
 function Registerform() {
 	const baseUrl = "https://backend.getlinked.ai";
-	const url = `${baseUrl}/hackathon/categories-list`;
+	const categoryUrl = `${baseUrl}/hackathon/categories-list`;
+	const regUrl = `${baseUrl}/hackathon/registration`;
 
 	const [teamName, setteamName] = useState("");
 	const [phone, setphone] = useState("");
@@ -18,9 +19,13 @@ function Registerform() {
 	const [teamSize, setteamSize] = useState("");
 	const [agree, setagree] = useState(false);
 	const [categoryTypes, setcategoryTypes] = useState([]);
+	const [error, seterror] = useState("");
+	const [success, setsuccess] = useState("");
+	const [SuccessModal, setSuccessModal] = useState(false);
+
 	const getCategoryList = () => {
 		axios
-			.get(url)
+			.get(categoryUrl)
 			.then((response) => {
 				console.log(response.data);
 				setcategoryTypes(response.data);
@@ -31,9 +36,13 @@ function Registerform() {
 			});
 	};
 
-	useEffect(() => {
-		getCategoryList();
-	}, []);
+	useEffect(
+		() => {
+			getCategoryList();
+		},
+		//eslint-disable-next-line
+		[]
+	);
 
 	const Data = {
 		email: email,
@@ -49,12 +58,31 @@ function Registerform() {
 		const formIsEmpty = hasEmptyOrZeroValues(Data);
 		const emailIsValid = isValidEmail(Data.email);
 		if (!formIsEmpty && emailIsValid) {
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+				},
+			};
+			axios
+				.post(regUrl, Data, config)
+				.then((response) => {
+					setsuccess("Your have success has successfully been submitted");
+					setSuccessModal(true);
+					console.log(response.data);
+					setTimeout(() => setsuccess(""), 4000);
+				})
+				.catch((error) => {
+					seterror("An Error Occured");
+					setTimeout(() => seterror(""), 4000);
+				});
 			console.log(Data);
 		}
 	};
 
 	return (
 		<main className="container mx-auto p-2 lg:p-8 flex flex-col  items-center lg:flex-row gap-6">
+			{SuccessModal && <Successmodal />}
+
 			<div className="lg:w-1/2">
 				<Image
 					className="  w-fit"
@@ -153,7 +181,7 @@ function Registerform() {
 								<option
 									key={category.id}
 									className="bg-[#150e28]"
-									value={category.name}>
+									value={category.id}>
 									{category.name}
 								</option>
 							))}
@@ -224,6 +252,16 @@ function Registerform() {
 							Submit
 						</button>
 					</div>
+					{error && (
+						<p className="my-4 text-red-500 text-center font-semibold">
+							{error}
+						</p>
+					)}
+					{success && (
+						<p className="my-4 text-green-500 text-center font-semibold">
+							{success}
+						</p>
+					)}
 				</div>
 			</div>
 		</main>

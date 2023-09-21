@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Successmodal() {
 	return (
-		<section className="fixed inset-0 bg-[#150e28]/90 p-4  backdrop-blur-sm">
+		<section className="fixed inset-0 z-50 bg-[#150e28]/90 p-4  backdrop-blur-sm">
 			<div className="h-full flex justify-center items-center">
 				<div className="max-w-md border  border-[#D434FE]   rounded-md mx-auto flex flex-col  items-center">
 					<div>

@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Registerform from "@/components/Registerform";
-import Successmodal from "@/components/Successmodal";
 import React from "react";
 
 function Register() {
@@ -8,7 +7,6 @@ function Register() {
 		<section>
 			<Navbar />
 			<Registerform />
-			{/* <Successmodal /> */}
 		</section>
 	);
 }
