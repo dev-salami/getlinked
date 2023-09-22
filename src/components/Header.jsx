@@ -31,7 +31,6 @@ function Header() {
 							className="w-32"
 							src={stroke}
 							alt="stroke"></Image>
-						{/* <span className="border-[#fe34b9]   border-t-2 h-10 w-auto rounded-full"></span> */}
 					</div>
 				</div>
 			</section>
