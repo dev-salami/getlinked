@@ -40,14 +40,16 @@ function Contact() {
 				.post(url, data, config)
 				.then((response) => {
 					setsuccess("Your form has successfully been submitted");
-					console.log(response.data);
+					setTimeout(() => {
+						setsuccess("");
+					}, 4000);
 				})
 				.catch((error) => {
-					console.log(error);
 					seterror("An Error Occured");
+					setTimeout(() => {
+						seterror("");
+					}, 4000);
 				});
-
-			// console.log(data);
 		}
 	};
 	return (
