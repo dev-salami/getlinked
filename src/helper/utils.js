@@ -15,12 +15,9 @@ export const getCategoryList = () => {
 
 	axios(config)
 		.then(function (response) {
-			console.log(JSON.stringify(response.data));
 			return response.data;
 		})
-		.catch(function (error) {
-			console.log(error);
-		});
+		.catch(function (error) {});
 };
 export default function hasEmptyOrZeroValues(obj) {
 	for (const key in obj) {
@@ -68,5 +65,4 @@ export function isValidEmail(email) {
 //   if (isValid) {
 //     retu
 //   } else {
-//     console.log(`${email} is not a valid email address.`);
 //   }

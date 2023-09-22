@@ -27,13 +27,10 @@ function Registerform() {
 		axios
 			.get(categoryUrl)
 			.then((response) => {
-				console.log(response.data);
 				setcategoryTypes(response.data);
 				// return response.data;
 			})
-			.catch((error) => {
-				console.log(error);
-			});
+			.catch((error) => {});
 	};
 
 	useEffect(
@@ -68,14 +65,12 @@ function Registerform() {
 				.then((response) => {
 					setsuccess("Your have success has successfully been submitted");
 					setSuccessModal(true);
-					console.log(response.data);
 					setTimeout(() => setsuccess(""), 4000);
 				})
 				.catch((error) => {
 					seterror("An Error Occured");
 					setTimeout(() => seterror(""), 4000);
 				});
-			console.log(Data);
 		}
 	};
 

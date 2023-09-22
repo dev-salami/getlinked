@@ -36,7 +36,7 @@ function Header() {
 			</section>
 			<section
 				id="overview"
-				className=" mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
+				className="container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
 				<div className="flex flex-col gap-4 sm:ml-8  lg:w-1/2">
 					<p className="font-bold text-4xl sm:text-5xl xl:text-6xl">
 						<span className="pt-8 flex items-center ">
