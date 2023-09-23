@@ -23,7 +23,7 @@ function Navbar() {
 						/>
 					</div>
 				</button> */}
-				<div className=" ">
+				<div className="sm:hidden ">
 					<div
 						className={`z-[1000] duration-1000 p-10 bg-[#150e28]    fixed top-0 left-0 right-0 bottom-0 ${
 							open ? " " : "  -translate-x-full "
