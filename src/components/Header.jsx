@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import chain from "../../public/assets/chain.svg";
+import boom from "../../public/assets/boom.svg";
+
 import header1 from "../../public/assets/header.png";
 import idea from "../../public/assets/idea.png";
 import rule from "../../public/assets/rule.png";
@@ -36,7 +38,7 @@ function Header() {
 			</section>
 			<section
 				id="overview"
-				className="container mx-auto p-3 sm:p-8 flex flex-col items-center lg:flex-row">
+				className="container mx-auto p-2 sm:p-8 flex flex-col items-center lg:flex-row">
 				<div className="flex flex-col gap-4 sm:ml-8  lg:w-1/2">
 					<p className="font-bold text-4xl sm:text-5xl xl:text-6xl">
 						<span className="pt-8 flex items-center ">
@@ -49,12 +51,16 @@ function Header() {
 									alt="bulb-icon"></Image>
 							</span>
 						</span>
-						<span className="font-bold  flex gap-2 mt-4">
+						<span className="font-bold  flex gap-1 items-center mt-4">
 							Hackathon <span className="text-[#fe34b9]">1.0</span>
 							<Image
 								className="h-10 sm:h-16  w-fit"
 								src={chain}
 								alt="chain-icon"></Image>
+							<Image
+								className="h-8 sm:h-14  w-fit"
+								src={boom}
+								alt="boom-icon"></Image>
 						</span>
 					</p>
 
